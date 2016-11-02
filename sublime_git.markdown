@@ -8,6 +8,7 @@ fatal: could not read Username for 'https://github.com': No such file or directo
 ## USAGE
 ctrl + shift + P
 
+
 git add 
 
 git commit
@@ -17,3 +18,4 @@ git commit
 	|-- ctrl + w auto commit
 
 git push
+
