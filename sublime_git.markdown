@@ -7,8 +7,13 @@ fatal: could not read Username for 'https://github.com': No such file or directo
 
 ## USAGE
 ctrl + shift + P
+
 git add 
+
 git commit
+
 	|-- open a file write down the comment
+
 	|-- ctrl + w auto commit
+
 git push
