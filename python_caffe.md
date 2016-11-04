@@ -14,7 +14,7 @@ make distribute
 
 执行完后修改bashrc文件，添加
 
-PYTHONPATH=${HOME}/caffe/distribute/python:$PYTHONPATH
+PYTHONPATH=${HOME}/caffe/python:$PYTHONPATH
 
 使得python能够找到caffe的依赖。
 

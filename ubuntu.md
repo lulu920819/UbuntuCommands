@@ -1,0 +1,4 @@
+# print home 
+```
+echo $HOME
+```
