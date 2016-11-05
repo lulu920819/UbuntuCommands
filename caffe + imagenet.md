@@ -2,6 +2,28 @@
 
 all the command run in the caffe root folder
 
+* structure 
+```
+--|caffe
+----|data
+------|dcase1
+--------|train.txt
+--------|val.txt
+--------|train
+----------|train.pic
+--------|val
+----------|val.pic
+----------|maybe the mean of the file is here too
+----|examples
+------|dcase1
+--------|create_imagenet.sh
+--------|make_imagenet_mean.sh
+--------|train_caffenet.sh
+--------|train_val.prototxt
+--------|solver.prototxt
+
+```
+
 #prepate dataset
 
 in the dacase data folder
