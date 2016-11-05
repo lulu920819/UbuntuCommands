@@ -124,7 +124,7 @@ chmod +x ./examples/dcase1/make_imagenet_mean.sh
 
 # the net proto type
 
-* all copy from the models/bvlc_reference_caffenet/ into the dcase1/
+* all copy from the models/bvlc_reference_caffenet/ into the examples/dcase1/
 
 * train_val.prototxt
 ```
@@ -135,19 +135,21 @@ data_param {
 	batch_size: 256
 	backend: LMDB
 }
+
+# test layer--batch_size: 50 #和solver中的test_iter相乘约等于验证集大小  
 # ALL THE PATH
 ```
 
 * solver.prototxt
 ```
 net: "examples/dcase1/train_val.prototxt"
-
+test_iter# should change according to batch_size in the train_val.prototxt 
 snapshot_prefix: "examples/dcase1/caffenet_train"
-solver_mode: CPU
+solver_mode: GPU
 ```
 
 # RUN TRAIN
-* copy from examples/imagenet/train_imagenet.sh
+* copy from examples/imagenet/train_imagenet.sh  to examples/dcase1/
 
 * change
 ```
