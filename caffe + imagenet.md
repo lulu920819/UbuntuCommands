@@ -23,6 +23,18 @@ python makelabels.py
 ```
 the labels are under the labels/1 or 2 or 3 or 4
 
+* convert the file into 256*256
+```
+sudo apt-get install imagemagick
+
+# convert256.sh
+
+for name in images_spectrogram/*.jpg
+do
+convert -resize 256x256\! $name $name
+done
+
+```
 
 # move files
 make sure mkdir under the caffe/data/dcase1
@@ -161,4 +173,9 @@ solver_mode: GPU
 ```
 chmod +x examples/dcase1/train_imagenet.sh
 ./examples/dcase1/train_imagenet.sh
+
+
+# or nohup
+nohup ./examples/dcase1/train_imagenet.sh > examples/dcase1/log.txt 2>&1 &
+# ps don't add log in the examples/dcase1/log/log.txt  dont't know why it will end
 ```
