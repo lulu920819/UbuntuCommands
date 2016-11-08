@@ -1,5 +1,26 @@
 learn caffenet train_val.prototxt
 ![imagenet flow](images/imagenetflow.png)
+
+
+# 对流程图的理解
+
+* 一个conv可以多次使用
+* top表示输入　　bottom表示输出　　可以多个也可以没有
+
+｀｀｀
+layers { 
+  bottom: "decode1neuron" // 该层底下连接的第一个Layer 
+  bottom: "flatdata" // 该层底下连接的第二个Layer 
+  top: "l2_error" // 该层顶上连接的一个Layer 
+
+  name: "loss" // 该层的名字 
+  type: EUCLIDEAN_LOSS // 该层的类型 
+  loss_weight: 0 
+  }
+
+
+｀｀｀
+
 # first is the name of the net
 ```
 name: "CaffeNet"
