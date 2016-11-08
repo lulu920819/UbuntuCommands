@@ -2,4 +2,4 @@
 set -e
 
 ./build/tools/caffe train \
-    --solver=examples/dcase1/solver.prototxt $@
+    --solver=examples/dcase3/solver.prototxt $@

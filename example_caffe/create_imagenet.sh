@@ -3,12 +3,12 @@
 # N.B. set the path to the imagenet train + val data dirs
 set -e
 
-EXAMPLE=examples/dcase2
-DATA=data/dcase2
+EXAMPLE=examples/dcase3
+DATA=data/dcase3
 TOOLS=build/tools
 
-TRAIN_DATA_ROOT=~/caffe/data/dcase2/train/
-VAL_DATA_ROOT=~/caffe/data/dcase2/val/
+TRAIN_DATA_ROOT=~/caffe/data/dcase3/train/
+VAL_DATA_ROOT=~/caffe/data/dcase3/val/
 
 # Set RESIZE=true to resize the images to 256x256. Leave as false if images have
 # already been resized using another tool.
@@ -43,7 +43,7 @@ GLOG_logtostderr=1 $TOOLS/convert_imageset \
     --shuffle \
     $TRAIN_DATA_ROOT \
     $DATA/train.txt \
-    $EXAMPLE/dcase2_train_lmdb
+    $EXAMPLE/dcase3_train_lmdb
 
 echo "Creating val lmdb..."
 
@@ -53,6 +53,6 @@ GLOG_logtostderr=1 $TOOLS/convert_imageset \
     --shuffle \
     $VAL_DATA_ROOT \
     $DATA/val.txt \
-    $EXAMPLE/dcase2_val_lmdb
+    $EXAMPLE/dcase3_val_lmdb
 
 echo "Done."
