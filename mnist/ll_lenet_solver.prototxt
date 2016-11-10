@@ -23,3 +23,5 @@ snapshot: 5000
 snapshot_prefix: "examples/dcase_mnist/llenet_"
 # solver mode: CPU or GPU
 solver_mode: GPU
+
+
