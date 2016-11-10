@@ -228,7 +228,15 @@ bias_filler {
 
 ```
 
-
+* 计算
+通过卷积后的大小变化
+c_o: number of filter
+n: batch size
+(h: height w: width )
+输入　n*c_i*h_i*w_i
+输出　n*c_o*h_o*w_o 
+h_o = (h_i+2*pad_h - kernel_h)/stride_h +1
+w_o = (h_i+2*pad_w - kernel_w)/stride_w +1
 
 
 

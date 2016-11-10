@@ -10,7 +10,7 @@ layer{
   }
   transform_param {
     mirror: false
-    mean_file: "data/dcase3/imagenet_mean.binaryproto"
+    mean_file: "examples/dcase2/imagenet_mean.binaryproto"
   }
 # mean pixel / channel-wise mean instead of mean image
 #  transform_param {
@@ -21,8 +21,8 @@ layer{
 #    mirror: true
 #  }
   data_param {
-    source: "examples/dcase3/dcase3_train_lmdb"
-    batch_size: 256
+    source: "examples/dcase2/dcase2_train_lmdb"
+    batch_size: 96
     backend: LMDB
   }
 }
@@ -38,7 +38,7 @@ layer{
   transform_param {
     mirror: false
     #crop_size: 227
-    mean_file: "data/dcase3/imagenet_mean.binaryproto"
+    mean_file: "examples/dcase2/imagenet_mean.binaryproto"
   }
 # mean pixel / channel-wise mean instead of mean image
 #  transform_param {
@@ -49,8 +49,8 @@ layer{
 #    mirror: false
 #  }
   data_param {
-    source: "examples/dcase3/dcase3_val_lmdb"
-    batch_size: 50
+    source: "examples/dcase2/dcase2_val_lmdb"
+    batch_size: 44
     backend: LMDB
   }
 }
@@ -59,7 +59,7 @@ layer{
   bottom: "data"
   top: "conv1_1"
   name: "conv1_1"
-  type: CONVOLUTION
+  type: "Convolution"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -83,18 +83,18 @@ layer{
   }
 }
 # conv1_1 - relu1_1
-layers {
+layer {
   bottom: "conv1_1"
   top: "conv1_1"
   name: "relu1_1"
-  type: RELU
+  type: "ReLU"
 }
 # conv1_1 - conv1_2
-layers {
+layer {
   bottom: "conv1_1"
   top: "conv1_2"
   name: "conv1_2"
-  type: CONVOLUTION
+  type: "Convolution"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -118,22 +118,22 @@ layers {
   }
 }
 # conv1_2 - relu1_2
-layers {
+layer {
   bottom: "conv1_2"
   top: "conv1_2"
   name: "relu1_2"
-  type: RELU
+  type: "ReLU"
 }
 # relu1_2 - pool1
-layers {
+layer {
   bottom: "conv1_2"
   top: "pool1"
   name: "pool1"
-  type: POOLING
+  type: "Pooling"
   pooling_param {
     pool: MAX
-    kernel_size: 2
-    stride: 2
+    kernel_size: 3
+    stride: 3
   }
 }
 # pool1 - drop1
@@ -151,7 +151,7 @@ layer{
   bottom: "drop1"
   top: "conv2_1"
   name: "conv2_1"
-  type: CONVOLUTION
+  type: "Convolution"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -175,18 +175,18 @@ layer{
   }
 }
 # conv2_1 - relu2_1
-layers {
+layer {
   bottom: "conv2_1"
   top: "conv2_1"
   name: "relu2_1"
-  type: RELU
+  type: "ReLU"
 }
 # conv2_1 - conv2_2
-layers {
+layer {
   bottom: "conv2_1"
   top: "conv2_2"
   name: "conv2_2"
-  type: CONVOLUTION
+  type: "Convolution"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -210,22 +210,22 @@ layers {
   }
 }
 # conv2_2 - relu2_2
-layers {
+layer {
   bottom: "conv2_2"
   top: "conv2_2"
   name: "relu2_2"
-  type: RELU
+  type: "ReLU"
 }
 # relu2_2 - pool2
-layers {
+layer {
   bottom: "conv2_2"
   top: "pool2"
   name: "pool2"
-  type: POOLING
+  type: "Pooling"
   pooling_param {
     pool: MAX
-    kernel_size: 2
-    stride: 2
+    kernel_size: 3
+    stride: 3
   }
 }
 # pool2- drop2
@@ -241,9 +241,9 @@ layer {
 # drop2 conv3_1
 layer{
   bottom: "drop2"
-  top: "conv2_1"
+  top: "conv3_1"
   name: "conv3_1"
-  type: CONVOLUTION
+  type: "Convolution"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -267,18 +267,18 @@ layer{
   }
 }
 # conv3_1 - relu3_1
-layers {
+layer {
   bottom: "conv3_1"
   top: "conv3_1"
   name: "relu3_1"
-  type: RELU
+  type: "ReLU"
 }
 # conv3_1 - conv3_2
-layers {
+layer {
   bottom: "conv3_1"
   top: "conv3_2"
   name: "conv3_2"
-  type: CONVOLUTION
+  type: "Convolution"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -302,22 +302,22 @@ layers {
   }
 }
 # conv3_2 - relu3_2
-layers {
+layer {
   bottom: "conv3_2"
   top: "conv3_2"
   name: "relu3_2"
-  type: RELU
+  type: "ReLU"
 }
 # relu3_2 - pool3
-layers {
+layer {
   bottom: "conv3_2"
   top: "pool3"
   name: "pool3"
-  type: POOLING
+  type: "Pooling"
   pooling_param {
     pool: MAX
-    kernel_size: 2
-    stride: 2
+    kernel_size: 3
+    stride: 3
   }
 }
 # pool3- drop3
@@ -335,7 +335,7 @@ layer{
   bottom: "drop3"
   top: "conv4_1"
   name: "conv4_1"
-  type: CONVOLUTION
+  type: "Convolution"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -359,18 +359,18 @@ layer{
   }
 }
 # conv4_1 - relu4_1
-layers {
+layer {
   bottom: "conv4_1"
   top: "conv4_1"
   name: "relu4_1"
-  type: RELU
+  type: "ReLU"
 }
 # conv4_1 - conv4_2
-layers {
+layer {
   bottom: "conv4_1"
   top: "conv4_2"
   name: "conv4_2"
-  type: CONVOLUTION
+  type: "Convolution"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -394,23 +394,23 @@ layers {
   }
 }
 # conv4_2 - relu4_2
-layers {
+layer {
   bottom: "conv4_2"
   top: "conv4_2"
   name: "relu4_2"
-  type: RELU
+  type: "ReLU"
 }
 # relu4_2 - pool4
-layers {
+layer {
   bottom: "conv4_2"
   top: "pool4"
   name: "pool4"
-  type: POOLING
+  type: "Pooling"
   pooling_param {
     pool: AVE
     # TODE  HERE SHOULD BE THE SIZE OF BOTTOM LAYER
-    kernel_size: 2
-    stride: 2
+    kernel_size: 5
+    stride: 1
   }
 }
 # pool4 - fc5
@@ -447,11 +447,11 @@ layer {
   top: "fc5"
 }
 # dropout5
-layers {
+layer {
   bottom: "fc5"
-  top: "fc5"
+  top: "drop5"
   name: "drop5"
-  type: DROPOUT
+  type: "Dropout"
   dropout_param {
     dropout_ratio: 0.5
   }
@@ -461,8 +461,8 @@ layers {
 layer {
   name: "fc6"
   type: "InnerProduct"
-  bottom: "fc5"
-  top: "drop5"
+  bottom: "drop5"
+  top: "fc6"
   param {
     lr_mult: 1
     decay_mult: 1

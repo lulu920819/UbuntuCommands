@@ -133,7 +133,7 @@ layer {
   pooling_param {
     pool: MAX
     kernel_size: 3
-    stride: 3
+    stride: 2
   }
 }
 # pool1 - drop1
@@ -225,7 +225,7 @@ layer {
   pooling_param {
     pool: MAX
     kernel_size: 3
-    stride: 3
+    stride: 2
   }
 }
 # pool2- drop2
@@ -241,7 +241,7 @@ layer {
 # drop2 conv3_1
 layer{
   bottom: "drop2"
-  top: "conv2_1"
+  top: "conv3_1"
   name: "conv3_1"
   type: "Convolution"
   param {
@@ -317,7 +317,7 @@ layer {
   pooling_param {
     pool: MAX
     kernel_size: 3
-    stride: 3
+    stride: 2
   }
 }
 # pool3- drop3
@@ -449,7 +449,7 @@ layer {
 # dropout5
 layer {
   bottom: "fc5"
-  top: "fc5"
+  top: "drop5"
   name: "drop5"
   type: "Dropout"
   dropout_param {
@@ -461,8 +461,8 @@ layer {
 layer {
   name: "fc6"
   type: "InnerProduct"
-  bottom: "fc5"
-  top: "drop5"
+  bottom: "drop5"
+  top: "fc6"
   param {
     lr_mult: 1
     decay_mult: 1

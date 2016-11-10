@@ -1,0 +1,21 @@
+net: "examples/dcase2/DCASE_TEST_p3s3.prototxt"
+test_iter: 56
+# 56*44(test batch size) 
+test_interval: 231
+# 231*96(train batch size) A epoch
+# test every epoch
+base_lr: 0.02
+# learning rate 0.02
+lr_policy: "step"
+gamma: 0.5
+stepsize: 1155
+# 1155 = 231*5 every 5 epoch half it
+display: 231
+max_iter: 23100
+# 231*100 100 epoch
+momentum: 0.9
+weight_decay: 0.0001
+snapshot: 2310
+# save every 10 epoch
+snapshot_prefix: "examples/dcase2/dcase2_train"
+solver_mode: GPU
