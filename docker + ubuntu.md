@@ -1,4 +1,4 @@
-# caffe + ubuntu 16.04
+# docker + ubuntu 16.04
 
 
 # just try this easy way
