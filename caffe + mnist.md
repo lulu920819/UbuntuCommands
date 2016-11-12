@@ -37,7 +37,6 @@ lenet_iter_5000.solverstate
 
 * 当所有数据都训练好之后，接下来就是如何将模型应用到实际数据了：
 ```
-如果没有GPU则使用
 
-./build/tools/caffe.bin test -model=examples/mnist/lenet_train_test.prototxt -weights=examples/mnist/lenet_iter_10000.caffemodel
+./build/tools/caffe.bin test -model=examples/mnist/lenet_train_test.prototxt -weights=examples/mnist/lenet_iter_10000.caffemodel --gpu
 ```

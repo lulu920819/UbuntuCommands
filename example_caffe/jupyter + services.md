@@ -82,6 +82,10 @@ https://[ip]:[port]9999
 
 ```
 
+## log out
+```
+ctrl + c
+```
 
 ## ps
 in the reference blog
@@ -90,6 +94,13 @@ in the reference blog
 iptable
 ```
 don't know what it is but it works 
+
+
+
+## kill port
+```
+kill -9 `lsof -ti:8888`
+```
 
 ## linux port
 ```
