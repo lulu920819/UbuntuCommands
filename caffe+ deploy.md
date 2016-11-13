@@ -9,6 +9,8 @@ layer {
   top: "data"
   input_param { shape: { dim: 10 dim: 3 dim: 227 dim: 227 } }
 }
+
+# no meanfile
 ```
 
 # structure
