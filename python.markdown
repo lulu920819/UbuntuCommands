@@ -8,6 +8,10 @@ from src.files import *
 from src.features import *
 ```
 
-
+# pip
+```
+pip install -r requirements.txt
+pip install --upgrade pip
+```
 
 
