@@ -85,6 +85,11 @@ mycaffe是新生成的镜像的名称。
 
 
 
+# 查看运行
+	docker ps 
+
+# ip
+	docker inspect (container id)10ed9726ae37 | grep IPAddress
 
 
 
