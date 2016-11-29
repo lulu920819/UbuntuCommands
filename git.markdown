@@ -114,3 +114,9 @@ git commit -m 'update .gitignore'
     https://{username}:{password}@github.com
 
 	git config --global credential.helper store
+
+
+# delete
+when you delete files manually
+but `git add` won't add the change
+	git add -A .
