@@ -56,3 +56,36 @@ xclip -sel clip < ~/.ssh/id_ras.pub
 
 	sudo apt-get install indicator-stickynotes
 
+# mendelay
+	paper management software
+
+[download](https://www.mendeley.com/newsfeed/)
+
+
+# vim
+
+[reference](https://github.com/ma6174/vim)
+
+# sogou
+
+[reference](http://pinyin.sogou.com/linux/?r=pinyin%E3%80%82)
+	remember to log out
+
+
+# cmatrix
+	sudo apt-get install cmatrix
+	cmatrix
+
+
+# guake terminal
+[reference](https://github.com/Guake/guake)
+
+# tweak tools
+change the desktop
+	sudo add-apt-repository ppa:freyja-dev/unity-tweak-tool-daily
+	sudo apt-get update
+	duso apt-get install unity-tweak-tool
+
+# guake
+	sudo add-apt-repository ppa:webupd8team/unstable
+	sudo apt-get update
