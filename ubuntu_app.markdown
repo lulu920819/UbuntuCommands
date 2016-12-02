@@ -78,6 +78,7 @@ xclip -sel clip < ~/.ssh/id_ras.pub
 
 
 # guake terminal
+	sudo apt-get install guake
 [reference](https://github.com/Guake/guake)
 
 # tweak tools
@@ -89,3 +90,42 @@ change the desktop
 # guake
 	sudo add-apt-repository ppa:webupd8team/unstable
 	sudo apt-get update
+
+# 下载
+	http://jingyan.baidu.com/article/a65957f4e9adcf24e67f9bc0.html?st=2&net_type=&bd_page_type=1&os=0&rst=
+
+# zsh
+	sudo apt-get install zsh
+	sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+	chsh?? and logout
+
+#  词典
+	sudo apt-get install stardict
+	tar -zxvf  *.tar.bz2	
+	sudo cp -rf /home/who/down/* /usr/share/stardict/dic
+	cd /usr/share/stardict/
+	sudo chmod -R 777 dic
+
+[字典下载](http://abloz.com/huzheng/stardict-dic/zh_CN/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
