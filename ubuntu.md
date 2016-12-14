@@ -29,8 +29,10 @@ rename the file with test1 into test1_fold1
 # at
 
 ![at ](images/ubuntu_at.png)
-	
-	at
+		
+	sudo vi /etc/at.allow  -- add user
+	at now+3 minutes
+	/home/mmap/lu/task1_dataset/test_at.sh
 	crtl+D save and exit
 
 # tar
@@ -39,3 +41,9 @@ rename the file with test1 into test1_fold1
 
 * decompress
 	tar -zxvf *.tar.gz	
+
+
+
+# cp
+copy one file into multiple dirs
+	for i in `ls -d */*`;do cp mnist.prototxt $i;done
